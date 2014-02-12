@@ -1,0 +1,58 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, Arial;
+    color: blue;
+}
+
+header {
+    padding: 10px 30px;
+    background: #CAE7EC;
+    font-size: 24px;
+}
+
+#userloginForm dt {
+    display: inline-block;
+    width: 160px;
+}
+
+#userForm dt {
+    display: inline-block;
+    width: 160px;
+}
+
+#userForm dd {
+    display: inline-block;
+}
+
+#userForm label {
+    font-size: 30px;
+}
+
+#userForm dd.info {
+    display: none;
+}
+
+#userloginForm label {
+    font-size: 30px;
+}
+
+#userloginForm dd {
+    display: inline-block;
+}
+
+#userloginForm dd.info {
+    display: none;
+}
+
+#userloginForm dl {
+    background: #FAFAFA;
+    padding: 10px;
+}
+
+.buttons {
+    background: #536565;
+    padding: 10px;
+    margin-top: 30px;
+    width: 150px;
+}

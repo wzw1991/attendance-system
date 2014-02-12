@@ -1,0 +1,31 @@
+@(users: List[User])
+
+	@import helper._
+	
+	 @main("用户列表") {
+	 	
+	 	<h2>共有@users.size user(s)</h2>
+	 	
+		<ul>
+		
+	    @users.map { user =>
+            <li>
+           <p>
+                            用户名： @user.username
+                <br>
+                             密码：   @user.password
+
+                @form(routes.Application.deleteUser(user.username)) {
+                    <input type="submit" value="Delete">
+                    }
+            </p>
+ 
+            </li>
+        }
+		</ul>
+		
+		<p class = "buttons">
+		<a href="h"><input type = "button" value="返回"></a>
+		<a href="users"><input type = "button" value="注册"></a>
+		</p>
+	 }

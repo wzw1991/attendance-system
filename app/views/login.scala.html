@@ -1,0 +1,19 @@
+@(userloginForm: Form[(String,String)])
+
+	@import helper._
+	
+	 @main(title = "登录") {
+	 	
+	 	<h2>用户登录</h2>
+	 	
+	 	@form(action = routes.Application.login, args = 'id -> "userloginForm"){
+	 		
+	 		@inputText(field = userloginForm("username"), args = '_label -> "用户名", 'placeholder ->"UserName")
+          
+			@inputPassword(field = userloginForm("password"),args = '_label -> "密码", 'placeholder ->"Password")
+			
+            <a href = "users"><input type="button" class = "buttons" value="注册"></a>
+            
+            <input type= "submit" class = "buttons" value="登录">
+	 	}
+	 }
