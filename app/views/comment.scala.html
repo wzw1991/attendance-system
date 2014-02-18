@@ -1,0 +1,40 @@
+@(comments: List[Comment_m])
+
+@main("Comment") {
+	
+	
+
+    <body>
+		<form>
+		
+			<table border = 1>
+			 @comments.map { comment =>
+				<tr>
+					<td rowspan = 2>@comment.cmUsername</td>
+					<td>@comment.cmContent</td>
+					<td rowspan = 2>@comment.cmTime</td>
+					<td rowspan = 3><a href = ""><button>回复</button></a></td>
+					<td rowspan = 3><a href = "@routes.Comment.complaint"><button>申诉</button></a></td>
+				</tr>
+				<tr>
+					<td>@comment.cmService</td>
+				</tr>
+				<tr>
+					<td colspan = 3>回复的内容：@comment.cmAddContent</td>
+				</tr>
+			}
+			</table>
+		
+			
+			<a href = "@routes.Comment.addComment"><input type="button" value="addComment" ></a>
+		</form>
+		<!-- ShareTo Button BEGIN -->
+		<a class="shareto_button" href="http://shareto.com.cn/share.html"><img src="http://s.shareto.com.cn/btn/lg-share-cn.gif" width="125" height="21" alt="陋ｻ�ｽ�ｺ�ｫ鬩包ｿｽ style="border:0"/></a>
+		<script type="text/javascript" src="http://s.shareto.com.cn/js/shareto_button.js" charset="utf-8"></script>
+		<!-- ShareTo Button END -->
+		
+		
+	
+	</body>
+
+}

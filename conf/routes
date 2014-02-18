@@ -22,6 +22,8 @@ GET     /comment                           controllers.Comment.find
 
 GET     /addComment                           controllers.Comment.addComment
 
+GET     /complaint                           controllers.Comment.complaint
+
 POST     /addC                        controllers.Comment.addC
 
 # Map static resources from the /public folder to the /assets URL path
