@@ -79,6 +79,12 @@ object Application extends Controller {
     Ok(views.html.login(userloginForm))
   }
   
+  def test = Action{
+    val user = User.findAll.toList
+    println(user)
+    Ok(views.html.login(userloginForm))
+  }
+  
   def admin = Action{
 	Ok(views.html.admin(User.all()))
   }
@@ -98,7 +104,9 @@ object Application extends Controller {
 	   {
 	     case(username,password) => {
 	        if(User.check(username,password)){
-	          Ok(views.html.success(username)).withSession(request.session+("username" -> username))
+	          val user_id = User.findId(username)
+//	          Redirect(routes.Comment.find).withSession(request.session+("user_id" -> user_id.toString()))
+	          Redirect(routes.MyPage.myPageMain).withSession(request.session+("user_id" -> user_id.toString()))
 	        }
 	        else if(username == "admin" && password == "admin"){
 	           Redirect(routes.Application.admin)

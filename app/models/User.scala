@@ -21,9 +21,23 @@ case class User(
                  )
 
 object User extends ModelCompanion[User, ObjectId] {
-  val dao = new SalatDAO[User, ObjectId](collection = mongoCollection("users1")) {}
+  val dao = new SalatDAO[User, ObjectId](collection = mongoCollection("user")) {}
 
   def all(): List[User] = dao.find(MongoDBObject.empty).toList
+  
+  def findId(username : String) = 
+    {
+    val p = dao.find(MongoDBObject("username" -> username))
+    val id = p.next.id
+    id
+    }
+  
+  def getUsername(id : Object) = 
+    {
+    val p = dao.find(MongoDBObject("_id" -> id))
+    val username = p.next.username
+    username
+    }
   
   def create(username: String, password: String,sex:String,tel: String, age: Int,education:String,introduce:String) {
     dao.insert(User(username = username,password = password,sex = sex,tel = tel,age = age,education = education,introduce = introduce))

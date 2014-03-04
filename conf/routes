@@ -5,6 +5,8 @@
 # Home page
 GET     /                       controllers.Application.h
 
+GET     /test                       controllers.Application.test
+
 # Tasks
 GET     /users                      controllers.Application.users
 POST    /users                      controllers.Application.newUser
@@ -18,13 +20,39 @@ GET     /infoChange                 controllers.Application.infoChange
 #POST    /infoChange                 controllers.Application.updateUser
 POST    /updateUser                 controllers.Application.updateUser
 
-GET     /comment                           controllers.Comment.find
+GET     /comment/:commentedId                           controllers.Comment.find(commentedId : ObjectId)
 
-GET     /addComment                           controllers.Comment.addComment
+GET     /answer/:id/:commentedId                          controllers.Comment.answer(id : ObjectId, commentedId : ObjectId)
 
-GET     /complaint                           controllers.Comment.complaint
+GET     /huifu/:id/:commentedId                       controllers.Comment.huifu(id : ObjectId, commentedId : ObjectId)
+GET     /delete/:id/:commentedId                       controllers.Comment.delete(id : ObjectId, commentedId : ObjectId)
 
-POST     /addC                        controllers.Comment.addC
+GET     /designermain                         controllers.designer.Designer.designermain
+
+GET     /designersearch                         controllers.designer.Designer.designersearch
+
+
+GET     /recordmain                         controllers.record.Records.recordmain
+
+GET     /dianpu_guanzhu                         controllers.MyPage.dianpu_guanzhu
+
+GET     /stylist                         controllers.MyPage.stylist_guanzhu
+
+GET     /myPageMain                         controllers.MyPage.myPageMain
+
+GET     /addComment/:id                       controllers.Comment.addComment(id : ObjectId)
+
+GET     /newBlog/:id                           controllers.Blog.newBlog(id : ObjectId)
+
+GET     /deleteBlog/:id                         controllers.Blog.deleteBlog(id : ObjectId)
+
+GET     /showBlog/:id                           controllers.Blog.showBlog(id : ObjectId)
+
+POST     /writeBlog/:id                           controllers.Blog.writeBlog(id : ObjectId)
+
+GET     /complaint/:cmId                      controllers.Comment.complaint(cmId : ObjectId)
+
+POST     /addC/:commentedId                       controllers.Comment.addC(commentedId : ObjectId)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

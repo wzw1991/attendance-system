@@ -1,0 +1,51 @@
+@(message:String)
+@import helper._
+@import helper.twitterBootstrap._
+@main("message"){
+		
+	<div class="content-core">
+		<h2>预约详情</h2>
+		@form(controllers.record.routes.Records.recordmain){
+		<table border="1px solid black" cellspacing="0" cellpadding="0" class="recordview-table">
+			<tr>
+				<td width="100px">顾客留言</td>
+				<td width="600px"></td>
+			</tr>
+			<tr>
+				<td>预约状态</td>
+				<td><select name="serviceStatus">
+					<option value="1">过期</option>
+					<option value="2">预约</option>
+					<option value="3">取消</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>指定人员</td>
+				<td><input type="checkbox" name="serviceDesigner" value="zhangsan">张三</td>
+			</tr>
+			<tr>
+				<td>服务项目</td>
+				<td><input type="checkbox" name="serviceItem" value="spa">张三</td>
+			</tr>
+			<tr>
+				<td>会员名</td>
+				<td><input name="userName"></td>
+			</tr>
+			<tr>
+				<td>会员号码</td>
+				<td><input name="userPhone"></td>
+			</tr>
+			<tr>
+				<td>会员留言</td>
+				<td><input name="userLeaveMessage"></td>
+			</tr>
+			<tr>
+				<td>合计金额</td>
+				<td><input name="costTotal"></td>
+			</tr>
+		</table>
+		<input type="button" value="返回预约履历" onclick="window.location.href='@controllers.record.routes.Records.recordmain';"/>
+		<input type="submit" value="提交">
+		}
+	</div>
+}

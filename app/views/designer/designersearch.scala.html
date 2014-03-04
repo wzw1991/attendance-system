@@ -1,0 +1,76 @@
+@(message: String)
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("message"){
+		<div class="content-link">
+			<p><a href = "my_salon.html" target = "salon_main">我的店铺</a></p>
+			<p><a href = "basic_info_control.html" target = "salon_main">基本信息管理</a></p>
+			<p><a href="@controllers.designer.routes.Designer.designermain">技师管理</a></p>
+			<ul>
+				<li><a href="@controllers.designer.routes.Designer.designermain">我的技师</a></li>
+				<li>技师搜索</li>
+			</ul>
+			<p><a href="@controllers.record.routes.Records.recordmain">预约管理</a></p>
+			<p><a href = "#" target = "salon_main">评论管理</a></p>
+			<p><a href = "service_control.html" target = "salon_main">服务管理</a></p>
+			<p><a href = "#" target = "salon_main">优惠劵管理</a></p>
+			<p><a href = "trend_control.html" target = "salon_main">动态管理</a></p>
+			<p><a href = "#" target = "salon_main">店铺装修</a></p>
+		</div>
+		@form(controllers.designer.routes.Designer.designersearch){
+		<div class="content-core">
+			<h1>技师搜索页面</h1>
+			<div>                           
+               	<input type="button" value="按从事年数"/>
+               	<input type="button" value="按人气"/>
+               	按目前状态：<select>
+               			<option>在职</option>
+               			<option>离职</option>
+               		   </select>
+               	                          
+        	</div>
+        	<div>
+        		<table cellspacing="0">
+				<tr>
+					<td>
+						<div>
+							<div>
+								
+							</div>
+							<p><a href="#">島崎 修</a></p>
+							<div ><span>代表</span>（歴8年）</div>
+							<p>所在地：</p>
+							<p><input type="button" value="邀请"></p>
+						</div>
+					</td>
+					<td>
+						<div>
+							<div>
+								
+							</div>
+							<p><a href="#">島崎 修</a></p>
+							<div ><span>代表</span>（歴8年）</div>
+							<p>所在地：</p>
+							<p><input type="button" value="邀请"></p>
+						</div>
+					</td>
+					<td>
+						<div>
+							<div>
+								
+							</div>
+							<p><a href="#">島崎 修</a></p>
+							<div ><span>代表</span>（歴8年）</div>
+							<p>所在地：</p>
+							<p><input type="button" value="邀请"></p>
+						</div>
+					</td>
+								
+				</tr>
+			</table>
+        	</div>
+		</div>
+	}	
+	
+}
