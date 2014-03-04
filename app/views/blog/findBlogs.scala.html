@@ -1,4 +1,4 @@
-@(blogs: List[Blogs])
+@(userId : ObjectId, blogs: List[Blogs])
 
 @main("Blog") {
     <body>
@@ -21,7 +21,7 @@
 				</tr>
 				}
 			</table>
-			@*<a href = "@routes.Blog.newBlog(blog.userId)"><input type="button" value="newBlog" ></a>*@
+			<a href = "@routes.Blog.newBlog(userId)"><input type="button" value="newBlog" ></a>
 			
 		</form>
 		<!-- ShareTo Button BEGIN -->

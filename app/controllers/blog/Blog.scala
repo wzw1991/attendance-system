@@ -98,9 +98,7 @@ object Blog extends Controller {
   
   def showBlog(id : ObjectId) = Action {
     val list = Blogs.showBlog(id)
-    Ok(views.html.blog.findBlogs(list))
-
-
+    Ok(views.html.blog.findBlogs(id, list))
   }
   
   def writeBlog(id : ObjectId) = Action {
